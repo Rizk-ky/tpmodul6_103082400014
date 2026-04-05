@@ -1,4 +1,6 @@
-﻿public class SayaTubeVideo
+﻿using System;
+
+public class SayaTubeVideo
 {
     private int id;
     private string title;
@@ -8,12 +10,12 @@
     {
         if (title == null)
         {
-            throw new ArgumentNullException("title", "Judul video tidak boleh kosong");
+            throw new ArgumentNullException("title", "Judul video tidak boleh null.");
         }
 
         if (title.Length > 100)
         {
-            throw new ArgumentException("Judul video tidak boleh lebih dari 100 karakter");
+            throw new ArgumentException("Judul video tidak boleh lebih dari 100 karakter.");
         }
 
         Random random = new Random();
@@ -26,12 +28,12 @@
     {
         if (count > 10000000)
         {
-            throw new ArgumentException("Penambahan play count maksimal 10.000.000 per panggilan");
+            throw new ArgumentException("Penambahan play count maksimal 10.000.000 per panggilan.");
         }
 
         if (count < 0)
         {
-            throw new ArgumentException("Penambahan play count tidak boleh negatif");
+            throw new ArgumentException("Penambahan play count tidak boleh negatif.");
         }
 
         checked
